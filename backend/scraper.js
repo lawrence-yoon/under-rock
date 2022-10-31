@@ -16,6 +16,8 @@ fetch('https://apnews.com/hub/world-news')
             console.log(domDocument[i].querySelector('a') ? "https://apnews.com" + domDocument[i].querySelector('a').href: "no provided hyperlink")
             console.log(domDocument[i].querySelector('p') ? domDocument[i].querySelector('p').textContent : "no provided summary")
             console.log(domDocument[i].querySelector('span.Timestamp') ? domDocument[i].querySelector('span.Timestamp').textContent : "no provided timestamp")
+            console.log(domDocument[i].querySelector('div.media-placeholder > img') ? domDocument[i].querySelector('div.media-placeholder > img').alt: "no provided image alt description")
+
         }
     })
     .catch(error=>console.log(error))
