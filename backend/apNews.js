@@ -18,7 +18,7 @@ const apNews = async () => {
         dataArray[i] = dataObject
     }
     dataArray = dataArray.filter(item=>item.headline!="empty")
-    console.log("scraper called, testing to see if its called when a get request is sent")
+    console.log("APNews scraped")
     return dataArray
 }
 

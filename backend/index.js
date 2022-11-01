@@ -4,23 +4,21 @@ const app = express()
 const port = process.env.PORT || 5000
 const apNews = require("./apNews")
 const hackerNews = require("./hackerNews")
-let dataContainerAP = []
-let dataContainerYC = []
+let newsPayload = new Object()
 
-const placeDataAP = async ()=>{
-    dataContainerAP = await apNews()
+const placeData = async ()=>{
+    newsPayload = {
+        newsAPArray: await apNews(),
+        newsYCArray: await hackerNews()
+    }
+    setTimeout(placeData, 14400000)
 }
 
-placeDataAP()
-
-const placeDataYC = async ()=>{
-    dataContainerYC = await hackerNews()
-}
-
-placeDataYC()
+placeData()
 
 app.get('/', (req,res)=>{
-    res.send("scraper called, check /api route")
+    console.log("get request received at '/'")
+    res.send("scraper called, check /api/news route for news")
 })
 
 //i have a feeling this might not be the most efficient way to do this.
@@ -41,13 +39,16 @@ app.get('/', (req,res)=>{
 
 // as for the weather, i want it called whenever the client renders. how can i know where the person is? its gotta be a fresh api get request by click or render.
 
-app.get('/api/newsAP', (req,res)=>{
-    res.send(dataContainerAP)
+app.get('/api/news', (req, res)=>{
+    console.log("get request received at '/api/news'")
+    res.send(newsPayload)
 })
 
-app.get('/api/newsYC', (req,res)=>{
-    res.send(dataContainerYC)
-})
+//for the data to get called everytime the request is sent, i will need to put the async await in here. 
+//something like the below code.
+// app.get('/api/weather', async(req,res)=>{
+//     res.send(await weather())
+// })
 
 app.get('/api/weather', (req,res)=>{
     res.send("this is where the weather stuff will go.")

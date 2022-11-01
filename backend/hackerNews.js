@@ -23,7 +23,7 @@ const hackerNews = async () => {
     // need to write a filter or something, for every hyperlink that starts with 'item?id=', we concatenate it at the beginning with 'https://news.ycombinator.com/'
     // maybe use regex aka regular expressions. 
     // nevermind, i got it with a for loop and includes() method. 
-    // console.log("scraper called, testing to see if its called when a get request is sent")
+    console.log("HackerNews from YC scraped")
     return dataArray
 }
 
