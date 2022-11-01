@@ -1,10 +1,11 @@
+require("dotenv").config()
 const express = require("express")
 const app = express()
-const dotenv = require("dotenv").config()
 const port = process.env.PORT || 5000
 const scraper = require("./scraper")
 let dataContainer = []
 
+console.log(process.env.PORT)
 const placeData = async ()=>{
     dataContainer = await scraper()
 }
@@ -26,6 +27,10 @@ app.get('/', (req,res)=>{
 //its working now, and i filtered out the empty ones within the scraper, at the bottom. same deal with global/local variable stuff.
 app.get('/api/news', (req,res)=>{
     res.send(dataContainer)
+})
+
+app.get('/api/weather', (req,res)=>{
+    res.send("this is where the weather stuff will go.")
 })
 
 app.listen(port, ()=>{
