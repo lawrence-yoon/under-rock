@@ -2,15 +2,22 @@ require("dotenv").config()
 const express = require("express")
 const app = express()
 const port = process.env.PORT || 5000
-const scraper = require("./scraper")
-let dataContainer = []
+const apNews = require("./apNews")
+const hackerNews = require("./hackerNews")
+let dataContainerAP = []
+let dataContainerYC = []
 
-console.log(process.env.PORT)
-const placeData = async ()=>{
-    dataContainer = await scraper()
+const placeDataAP = async ()=>{
+    dataContainerAP = await apNews()
 }
 
-placeData()
+placeDataAP()
+
+const placeDataYC = async ()=>{
+    dataContainerYC = await hackerNews()
+}
+
+placeDataYC()
 
 app.get('/', (req,res)=>{
     res.send("scraper called, check /api route")
@@ -25,8 +32,21 @@ app.get('/', (req,res)=>{
 //fixed it, put it in a callback function that saves it in here. i forget the terminology for like global vs local variables? 
 //issues came up, the log said i cant assign the data to const array variable, so i changed to let. 
 //its working now, and i filtered out the empty ones within the scraper, at the bottom. same deal with global/local variable stuff.
-app.get('/api/news', (req,res)=>{
-    res.send(dataContainer)
+
+//perhaps i look into gathering all news into one object. object, with key value pairs. 
+// payload = {
+//     newsAPArray: [],
+//     newsYCArray: [],
+// }
+
+// as for the weather, i want it called whenever the client renders. how can i know where the person is? its gotta be a fresh api get request by click or render.
+
+app.get('/api/newsAP', (req,res)=>{
+    res.send(dataContainerAP)
+})
+
+app.get('/api/newsYC', (req,res)=>{
+    res.send(dataContainerYC)
 })
 
 app.get('/api/weather', (req,res)=>{

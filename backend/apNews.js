@@ -3,7 +3,7 @@ const jsdom = require("jsdom")
 const {JSDOM} = jsdom
 let dataArray = []
 
-const scraper = async () => {
+const apNews = async () => {
     const response = await fetch('https://apnews.com/hub/world-news')
     const data = await response.text()
     const domParsed = new JSDOM(data)
@@ -24,5 +24,5 @@ const scraper = async () => {
 
 
 
-module.exports = scraper
+module.exports = apNews
 
