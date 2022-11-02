@@ -5,17 +5,16 @@ const port = process.env.PORT || 5000
 const apNews = require("./apNews")
 const hackerNews = require("./hackerNews")
 const weather = require("./weather")
-let newsPayload = new Object()
-let weatherPayload = new Object()
+let dataPayload = new Object()
 
 const placeData = async ()=>{
     console.log("fetching data...")
-    newsPayload = {
+    dataPayload = {
         newsAPArray: await apNews(),
-        newsYCArray: await hackerNews()
+        newsYCArray: await hackerNews(),
+        weather: await weather()
     }
-    weatherPayload = await weather()
-    setTimeout(placeData, 14400000)
+    setTimeout(placeData, 3600000)
 }
 
 placeData()
@@ -36,15 +35,13 @@ app.get('/', (req,res)=>{
 // })
 
 //i can maybe clean up this area, using express router?
-//we shall see...
-app.get('/api/news', (req, res)=>{
-    console.log("get request received at '/api/news'")
-    res.send(newsPayload)
-})
-
-app.get('/api/weather', (req,res)=>{
-    console.log("get request received at '/api/weather'")
-    res.send(weatherPayload)
+//i dont think i really need that at the moment, since this is mainly my personal minimalist dashboard app. 
+//at the moment i only really have get requests, at two different endpoints. 
+//perhaps i might refactor it to one payload at route /api/
+app.get('/api', (req, res)=>{
+    console.log("get request received at '/api'")
+    console.log("your public ip address is: " + req.socket.remoteAddress)
+    res.send(dataPayload)
 })
 
 app.listen(port, ()=>{

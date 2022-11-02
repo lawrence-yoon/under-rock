@@ -1,5 +1,5 @@
 const weather = async ()=>{
-    const now = new Date()
+    const now = new Date().toLocaleTimeString("en-US")
     const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=queens&APPID=${process.env.OW_API_KEY}`)
     const data = await response.json()
 

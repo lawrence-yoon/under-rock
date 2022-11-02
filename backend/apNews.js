@@ -23,7 +23,5 @@ const apNews = async () => {
     return dataArray
 }
 
-
-
 module.exports = apNews
 
