@@ -1,16 +1,20 @@
-require("dotenv").config()
+const dotenv = require("dotenv").config()
 const express = require("express")
 const app = express()
 const port = process.env.PORT || 5000
 const apNews = require("./apNews")
 const hackerNews = require("./hackerNews")
+const weather = require("./weather")
 let newsPayload = new Object()
+let weatherPayload = new Object()
 
 const placeData = async ()=>{
+    console.log("fetching data...")
     newsPayload = {
         newsAPArray: await apNews(),
         newsYCArray: await hackerNews()
     }
+    weatherPayload = await weather()
     setTimeout(placeData, 14400000)
 }
 
@@ -18,7 +22,7 @@ placeData()
 
 app.get('/', (req,res)=>{
     console.log("get request received at '/'")
-    res.send("scraper called, check /api/news route for news")
+    res.send("check /api/news route for news")
 })
 
 //i have a feeling this might not be the most efficient way to do this.
@@ -51,7 +55,8 @@ app.get('/api/news', (req, res)=>{
 // })
 
 app.get('/api/weather', (req,res)=>{
-    res.send("this is where the weather stuff will go.")
+    console.log("get request received at '/api/weather'")
+    res.send(weatherPayload)
 })
 
 app.listen(port, ()=>{

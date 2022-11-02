@@ -19,6 +19,7 @@ const apNews = async () => {
     }
     dataArray = dataArray.filter(item=>item.headline!="empty")
     console.log("APNews scraped")
+    console.log(dataArray)
     return dataArray
 }
 

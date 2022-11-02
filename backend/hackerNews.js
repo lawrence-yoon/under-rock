@@ -24,6 +24,7 @@ const hackerNews = async () => {
     // maybe use regex aka regular expressions. 
     // nevermind, i got it with a for loop and includes() method. 
     console.log("HackerNews from YC scraped")
+    console.log(dataArray)
     return dataArray
 }
 
