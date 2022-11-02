@@ -8,7 +8,14 @@ const weather = async ()=>{
     const k2F = function(kelvin){
         const fahrenheit = (((kelvin-273.15)*9)/5)+32
         const roundedF = Math.round(fahrenheit)
-        return roundedF
+        const readableF = roundedF + "°F"
+        return readableF
+    }
+
+    const readableTime = function(unixTime){
+        const date = new Date(unixTime*1000)
+        const localTime = date.toLocaleTimeString("en-US")
+        return localTime
     }
 
     const weatherData = {
@@ -21,13 +28,13 @@ const weather = async ()=>{
             feels_like: k2F(data.main.feels_like),
             temp_min: k2F(data.main.temp_min),
             temp_max: k2F(data.main.temp_max),
-            pressure: data.main.pressure,
-            humidity: data.main.humidity
+            pressure: data.main.pressure + "hPa",
+            humidity: data.main.humidity + "%"
         },
         wind: data.wind,
         sun: {
-            rise: data.sys.sunrise,
-            set: data.sys.sunset
+            rise: readableTime(data.sys.sunrise),
+            set: readableTime(data.sys.sunset)
         },
         location: {
             country: data.sys.country,
