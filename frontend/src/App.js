@@ -14,6 +14,9 @@ function App() {
   const [data, setData] = useState(null)
   const [error, setError] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
+  //maybe make a "timeNow" state, stick it in useEffect, live updating.
+  //i tried taking out the brackets at the end of useEffect, but then it just kept calling.
+  //need to look further into useEffect
   
   useEffect(()=>{
     fetch('/api/news')
@@ -45,8 +48,9 @@ function App() {
       {...initialUserData}
     />
     <Weather
-      {...data}
+      {...data.weatherAPI}
     />
+    {/*to pass the data from inside however many arrays, i will need to iterate.*/}
     <NewsAP
       {...data}
     />
