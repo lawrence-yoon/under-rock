@@ -1,8 +1,14 @@
 import React from 'react'
 
-function NewsAP() {
+function NewsAP({headline, hyperlink, summary, timestamp}) {
   return (
-    <div>NewsAP</div>
+    <div>
+        <a href={hyperlink}>
+            <h2>{headline}</h2>
+            <p>{summary}</p>
+        </a>
+        <p>{timestamp}</p>
+    </div>
   )
 }
 

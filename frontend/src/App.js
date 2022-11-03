@@ -11,6 +11,7 @@ function App() {
     name: "larry",
     currentTime: now
   }
+  //i want to insert a prompt, prompting whoever to input name
   const [data, setData] = useState(null)
   const [error, setError] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
@@ -43,21 +44,19 @@ function App() {
   if(error) return "Error!"
 
   return (
-  <>
-    <Greeting 
-      {...initialUserData}
-    />
-    <Weather
-      {...data.weatherAPI}
-    />
-    {/*to pass the data from inside however many arrays, i will need to iterate.*/}
-    <NewsAP
-      {...data}
-    />
-    <NewsYC
-      {...data}
-    />
-  </>
+    <>
+      <Greeting {...initialUserData}/>
+      <Weather {...data.weatherAPI}/>
+
+      {data.newsAPArray.map((article)=>
+        <NewsAP {...article}/>
+      )}
+
+      {data.newsYCArray.map((post)=>
+        <NewsYC {...post}/>
+      )}
+
+    </>
   );
 }
 

@@ -1,8 +1,12 @@
 import React from 'react'
 
-function NewsYC() {
+function NewsYC({headline, hyperlink}) {
   return (
-    <div>NewsYC</div>
+    <div>
+        <a href={hyperlink}>
+            {headline}
+        </a>
+    </div>
   )
 }
 
