@@ -2,11 +2,11 @@
   "name": "scraperv2",
   "version": "1.0.0",
   "description": "why go to multiple websites instead of going to just one?",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node backend/index.js",
-    "server": "nodemon backend/index.js"
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js"
   },
   "author": "Lawrence Yoon",
   "license": "ISC",
