@@ -12,20 +12,20 @@ const placeData = async ()=>{
     dataPayload = {
         newsAPArray: await apNews(),
         newsYCArray: await hackerNews(),
-        weather: await weather()
+        weatherAPI: await weather()
     }
     setTimeout(placeData, 3600000)
 }
 
 placeData()
 
-app.get('/', (req,res)=>{
-    console.log("get request received at '/'")
-    res.send("check /api/news route for news")
-})
+// app.get('/', (req,res)=>{
+//     console.log("get request received at '/'")
+//     res.send("check /api/news route for news")
+// })
 
-app.get('/api', (req, res)=>{
-    console.log("get request received at '/api'")
+app.get('/api/news', (req, res)=>{
+    console.log("get request received at '/api/news'")
     console.log("your public ip address is: " + req.socket.remoteAddress)
     res.send(dataPayload)
 })
