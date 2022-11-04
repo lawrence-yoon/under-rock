@@ -14,7 +14,7 @@ const placeData = async ()=>{
         newsYCArray: await hackerNews(),
         weatherAPI: await weather()
     }
-    setTimeout(placeData, 3600000)
+    setTimeout(placeData, 1800000)
 }
 
 placeData()

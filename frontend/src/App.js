@@ -22,24 +22,27 @@ function App() {
     //key value pairs, the keys with array in the name are matched with arrays
     //these arrays should be used to dynamically render components
     //weather should be able to be hardcoded
-    fetch('/api/news')
-      .then(response=>{
-        if(response.ok){
-          return response.json()
-        }
-        throw response;
-      })
-      .then(data=>{
-        setData(data)
-        console.log(data)
-      })
-      .catch(error=>{
-        console.error("Error fetching data: ", error)
-        setError(error)
-      })
-      .finally(()=>{
-        setIsLoading(false)
-      })
+
+    setInterval(()=>fetch('/api/news')
+    .then(response=>{
+      if(response.ok){
+        return response.json()
+      }
+      throw response;
+    })
+    .then(data=>{
+      setData(data)
+      console.log(data)
+    })
+    .catch(error=>{
+      console.error("Error fetching data: ", error)
+      setError(error)
+    })
+    .finally(()=>{
+      setIsLoading(false)
+    }), 1800000)
+
+
   //the square brackets missing on bottom, so that it can update the time.
   //might consider a different approach, while this renders every second, 
   //it is also sending the get request constantly, as shown in backend terminal
