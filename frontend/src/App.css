@@ -1,38 +1,22 @@
-.App {
-  text-align: center;
+html {
+  background-color: gray;
+  color: black;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+div{
+  border: 4px solid black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* colors, i want to use green and blue if possible. */
+/* we want to aim for 40-60 characters per line, makes blocks of text easier to read. */
+/* font, i want to go sans serif, possibly humanist? i think thats what its called */
+/* alignment. consistent alignment, like left aligned. reduce number of alignment points. text start lines, components. maybe use grid? */
+/* white space. add a lot of white space, make it look for expensive. more minimalist. not bullshit. */
+/* audience. who is this for? im thinking, no nonsense, like the newspaper. */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+/* i think im going to make it like a carousel. no automatic moving, but able to slide. */
+/* this will be SPA, maybe react router at the top, click and goes to #weather #apnews #hackernews */
+/* the first item will be the weather "widget". subsequent ones are the news. style them a bit differently. */
+/* im thinking of using F pattern. */
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* for accessibility, maybe stack it for scrolling in mobile, but on larger displays, horizontal?*/
