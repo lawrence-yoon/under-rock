@@ -7,19 +7,30 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-.greeting h2, .greeting h3{
-  text-align: center;
-}
-
 .weather {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+
+.greeting {
+  order:1;
+  align-self:center;
+}
+
+.forecast {
+  order: 1
+}
+
+.temperature {
+  align-self: center;
 }
 
 .news-container {
   display: grid;
   grid-template-columns: 30% 70%;
 }
+/* using 1fr? like 3r 7fr
+repeat(3,1fr)*/
 
 .headline {
   margin-top: 0;

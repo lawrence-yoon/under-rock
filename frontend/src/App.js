@@ -54,8 +54,10 @@ function App() {
 
   return (
     <>
-      <Greeting/>
-      <Weather {...data.weatherAPI}/>
+      <div className='weather'>
+        <Greeting/>
+        <Weather {...data.weatherAPI}/>
+      </div>
       <div className="news-container">
         <div className="posts-container">
           {data.newsYCArray.map((post)=>
