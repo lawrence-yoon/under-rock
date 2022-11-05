@@ -23,7 +23,7 @@ function App() {
     //these arrays should be used to dynamically render components
     //weather should be able to be hardcoded
 
-    setInterval(()=>fetch('/api/news')
+    fetch('/api/news')
     .then(response=>{
       if(response.ok){
         return response.json()
@@ -40,7 +40,7 @@ function App() {
     })
     .finally(()=>{
       setIsLoading(false)
-    }), 1800000)
+    })
 
 
   //the square brackets missing on bottom, so that it can update the time.
@@ -54,20 +54,21 @@ function App() {
 
   return (
     <>
-      <div>
-        <Greeting/>
-        <Weather {...data.weatherAPI}/>
+      <Greeting/>
+      <Weather {...data.weatherAPI}/>
+      <div className="news-container">
+        <div className="posts-container">
+          {data.newsYCArray.map((post)=>
+              <NewsYC {...post}/>
+          )}
+        </div>
+        <div className="articles-container">
+          {data.newsAPArray.map((article)=>
+              <NewsAP {...article}/>
+          )}
+        </div>
       </div>
-      <div>
-        {data.newsAPArray.map((article)=>
-          <NewsAP {...article}/>
-        )}
-      </div>
-      <div>
-        {data.newsYCArray.map((post)=>
-          <NewsYC {...post}/>
-        )}
-      </div>
+
     </>
   );
 }

@@ -9,10 +9,10 @@ function Greeting() {
   return (
     //i want to include some logic to display Good Morning or something...
     //Also, when I have the barebones app done, i want to make it so i pass through location as well
-    <>
+    <div className='greeting'>
         <h2>Hello Larry.</h2>
-        <h3>It is currently {currentTime}</h3>
-    </>
+        <h3 className='time'>{currentTime}</h3>
+    </div>
   )
 }
 
