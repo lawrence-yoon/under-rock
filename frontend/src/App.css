@@ -1,5 +1,5 @@
 html {
-  background-color: gray;
+  background-color: rgb(70, 99, 155);
   color: black;
 }
 
@@ -8,10 +8,11 @@ body {
 }
 
 .weather {
+  border-style: solid;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
-  background-color: yellow;
+  margin: 16px
 }
 
 .greeting {
@@ -39,23 +40,13 @@ body {
 .articles-container {
   display: flex;
   flex-direction: column;
-  background-color: fuchsia;
   max-width: 130ch;
 }
 /* using 1fr? like 3r 7fr
 repeat(3,1fr)*/
 
 .posts-container {
-  background-color: aquamarine;
-  padding: 8px 8px;
   max-width: 40ch
-}
-
-.currencies-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  background-color: lightgreen;
 }
 
 .headline {
@@ -63,11 +54,15 @@ repeat(3,1fr)*/
 }
 
 .posts-YC {
-  margin: 8px 8px 16px 8px;
+  border-style: solid;
+  padding: 16px;
+  background-color: rgb(155, 107, 44);
+  margin: 8px;
   max-width: 30ch;
 }
 
 .articles-AP {
+  background-color: rgb(60, 126, 82);
   border-style: solid;
   margin: 8px;
   padding: 4px 8px 0px;
