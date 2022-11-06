@@ -30,14 +30,15 @@ body {
 .news-container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
   grid-template-columns: 2fr 6fr;
   padding: 8px 8px;
 }
 
 .articles-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   background-color: fuchsia;
   max-width: 130ch;
 }
@@ -63,14 +64,13 @@ repeat(3,1fr)*/
 
 .posts-YC {
   margin: 8px 8px 16px 8px;
-  min-width: 40ch;
+  max-width: 30ch;
 }
 
 .articles-AP {
   border-style: solid;
   margin: 8px;
   padding: 4px 8px 0px;
-  min-width: 40ch;
   max-width: 60ch
 }
 
@@ -90,3 +90,12 @@ repeat(3,1fr)*/
 /* im thinking of using F pattern. */
 
 /* for accessibility, maybe stack it for scrolling in mobile, but on larger displays, horizontal?*/
+
+
+/*
+Need to brush up on...
+Grid
+media query
+overflow
+absolute positioning
+*/
