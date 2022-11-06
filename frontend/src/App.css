@@ -15,9 +15,16 @@ body {
   margin: 16px
 }
 
-.greeting {
+.clock {
+  display: flex;
   order:1;
   align-self:center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.time {
+  font-size: 48px;
 }
 
 .forecast {
@@ -42,8 +49,6 @@ body {
   flex-direction: column;
   max-width: 130ch;
 }
-/* using 1fr? like 3r 7fr
-repeat(3,1fr)*/
 
 .posts-container {
   max-width: 40ch
@@ -68,29 +73,3 @@ repeat(3,1fr)*/
   padding: 4px 8px 0px;
   max-width: 60ch
 }
-
-/* need to add media queries... the news feed has a huge space in the middle*/
-/* i need to set it up with grid and media query, and the individual stuff inside can be flex*/
-
-/* colors, i want to use green and blue if possible. */
-/* we want to aim for 40-60 characters per line, makes blocks of text easier to read. */
-/* font, i want to go sans serif, possibly humanist? i think thats what its called */
-/* alignment. consistent alignment, like left aligned. reduce number of alignment points. text start lines, components. maybe use grid? */
-/* white space. add a lot of white space, make it look for expensive. more minimalist. not bullshit. */
-/* audience. who is this for? im thinking, no nonsense, like the newspaper. */
-
-/* i think im going to make it like a carousel. no automatic moving, but able to slide. */
-/* this will be SPA, maybe react router at the top, click and goes to #weather #apnews #hackernews */
-/* the first item will be the weather "widget". subsequent ones are the news. style them a bit differently. */
-/* im thinking of using F pattern. */
-
-/* for accessibility, maybe stack it for scrolling in mobile, but on larger displays, horizontal?*/
-
-
-/*
-Need to brush up on...
-Grid
-media query
-overflow
-absolute positioning
-*/
