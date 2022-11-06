@@ -72,7 +72,7 @@ function App() {
           )}
         </div>
         <div className="posts-container">
-        <h2 style={{alignSelf: "flex-start", padding: "8px"}}>HackerNews - YCombinator</h2>
+        <h2 style={{alignSelf: "flex-start", paddingLeft: "8px", marginTop: "8px", marginBottom: "32px"}}>HackerNews - YCombinator</h2>
 
           {data.newsYCArray.map((post)=>
               <NewsYC {...post}/>
