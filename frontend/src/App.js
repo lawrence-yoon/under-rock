@@ -59,14 +59,23 @@ function App() {
         <Weather {...data.weatherAPI}/>
       </div>
       <div className="news-container">
-        <div className="posts-container">
-          {data.newsYCArray.map((post)=>
-              <NewsYC {...post}/>
-          )}
-        </div>
+        {/* <div className='currencies-container'>
+            <p>test</p>
+            <p>test2</p>
+            <p>test3</p>
+        </div> */}
         <div className="articles-container">
+        <h2 style={{alignSelf: "flex-start", margin: "8px", padding: "8px", flexBasis:"100%"}}>AP News</h2>
+        <br />
           {data.newsAPArray.map((article)=>
               <NewsAP {...article}/>
+          )}
+        </div>
+        <div className="posts-container">
+        <h2 style={{alignSelf: "flex-start", margin: "8px", padding: "8px"}}>HackerNews - YCombinator</h2>
+
+          {data.newsYCArray.map((post)=>
+              <NewsYC {...post}/>
           )}
         </div>
       </div>
