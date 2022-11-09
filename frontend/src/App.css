@@ -34,7 +34,7 @@ body {
 }
 
 .right-links {
-  display: flex;
+  display: none;
 }
 
 #push-content-down {
@@ -123,4 +123,10 @@ body {
   margin: 8px;
   padding: 4px 8px 0px;
   max-width: 60ch
+}
+
+@media (max-width: 932px) {
+  .right-links {
+    display:flex
+  }
 }
