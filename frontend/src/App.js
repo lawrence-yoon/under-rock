@@ -4,6 +4,7 @@ import Greeting from './components/Greeting';
 import Weather from './components/Weather'
 import NewsAP from './components/NewsAP';
 import NewsYC from './components/NewsYC';
+import Navbar from './components/Navbar';
 
 function App() {
   const [data, setData] = useState(null)
@@ -44,19 +45,21 @@ function App() {
 
   return (
     <>
-      <div className='weather'>
+      <Navbar/>
+      <div id='push-content-down'></div>
+      <div className='weather' id='top'>
         <Greeting/>
         <Weather {...data.weatherAPI}/>
       </div>
       <div className="news-container">
-        <div className="articles-container">
+        <div className="articles-container" id='ap'>
         <h2 style={{alignSelf: "flex-start", margin: "8px", padding: "8px", flexBasis:"100%"}}>AP News - International</h2>
         <br />
           {data.newsAPArray.map((article)=>
               <NewsAP {...article}/>
           )}
         </div>
-        <div className="posts-container">
+        <div className="posts-container" id='yc'>
         <h2 style={{alignSelf: "flex-start", paddingLeft: "24px", paddingTop: "8px", marginTop: "8px", marginBottom: "24px"}}>YCombinator News</h2>
 
           {data.newsYCArray.map((post)=>
