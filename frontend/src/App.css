@@ -3,6 +3,7 @@ html {
   padding: 0;
   background-color: rgb(70, 99, 155);
   color: black;
+  scroll-padding-top: 59px;
 }
 
 body {
@@ -12,7 +13,8 @@ body {
 }
 
 .navbar {
-  position: fixed;
+  position: sticky;
+  top: 0;
   width: 100%;
   background-color: rgb(19, 46, 102);
   display: flex;
@@ -46,7 +48,7 @@ body {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
-  margin: 0 16px
+  margin: 16px
 }
 
 .weather p{

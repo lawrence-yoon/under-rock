@@ -46,21 +46,20 @@ function App() {
   return (
     <>
       <Navbar/>
-      <div id='push-content-down'></div>
-      <div className='weather' id='top'>
+      <div className='weather'>
         <Greeting/>
         <Weather {...data.weatherAPI}/>
       </div>
       <div className="news-container">
-        <div className="articles-container" id='ap'>
-        <h2 style={{alignSelf: "flex-start", margin: "8px", padding: "8px", flexBasis:"100%"}}>AP News - International</h2>
+        <div className="articles-container">
+        <h2 style={{alignSelf: "flex-start", margin: "8px", padding: "8px", flexBasis:"100%"}}  id='ap'>AP News - International</h2>
         <br />
           {data.newsAPArray.map((article)=>
               <NewsAP {...article}/>
           )}
         </div>
-        <div className="posts-container" id='yc'>
-        <h2 style={{alignSelf: "flex-start", paddingLeft: "24px", paddingTop: "8px", marginTop: "8px", marginBottom: "24px"}}>YCombinator News</h2>
+        <div className="posts-container">
+        <h2 style={{alignSelf: "flex-start", paddingLeft: "24px", paddingTop: "8px", marginTop: "8px", marginBottom: "24px"}} id='yc'>YCombinator News</h2>
 
           {data.newsYCArray.map((post)=>
               <NewsYC {...post}/>
