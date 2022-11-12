@@ -63,8 +63,12 @@ body {
   text-align: center;
 }
 
+.good-greeting {
+  font-size: 2rem;
+}
+
 .time {
-  font-size: 48px;
+  font-size: 4rem;
 }
 
 .forecast {
