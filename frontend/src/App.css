@@ -72,14 +72,17 @@ body {
 }
 
 .forecast {
+  align-self: center;
+  text-align: center;
   order: 1
 }
 
 .temperature {
   align-self: center;
+  text-align: right;
 }
 
-@media (max-width: 456px) {
+@media (max-width: 516px) {
   .weather {
     border-style: solid;
     display: flex;
