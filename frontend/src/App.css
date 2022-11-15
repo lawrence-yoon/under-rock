@@ -39,16 +39,12 @@ body {
   display: none;
 }
 
-#push-content-down {
-  height: 81px
-}
-
 .weather {
   border-style: solid;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
-  margin: 16px
+  margin: 16px;
 }
 
 .weather p{
