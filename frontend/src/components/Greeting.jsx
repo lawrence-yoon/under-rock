@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react'
 
+//need to add some additional styling. better ui/ux
+//maybe add some styling for a circle border. dynamic radius-es (radii?) until certain min resolution, too big not good. 
 function Greeting() {
   const [currentTime, setCurrentTime] = useState(new Date())
   const goodGreeting = function(){
