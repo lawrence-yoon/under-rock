@@ -40,7 +40,6 @@ body {
 }
 
 .weather {
-  border-style: solid;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
@@ -78,13 +77,16 @@ body {
   text-align: right;
 }
 
+.temp-degrees {
+  font-size: 1.5rem;
+}
+
 @media (max-width: 516px) {
   .weather {
-    border-style: solid;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    margin: 0 16px
+    margin: 16px
   }
   .clock {
     order:0;
@@ -135,3 +137,4 @@ body {
     display:flex
   }
 }
+

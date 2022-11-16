@@ -10,10 +10,10 @@ function Weather({weather, temperature, sun}) {
         <p>Sunset: {sun.set}</p>
       </div>
       <div className='temperature'>
-        <p>Temperature: {temperature.temp}</p>
-        <p>Feels like: {temperature.feels_like}</p>
-        <p>Low of {temperature.temp_min}</p>
-        <p>High of {temperature.temp_max}</p>
+        <p>It is currently <strong className='temp-degrees'>{temperature.temp}</strong></p>
+        <p>It feels like <strong className='temp-degrees'>{temperature.feels_like}</strong></p>
+        <p>Low of <strong className='temp-degrees'>{temperature.temp_min}</strong></p>
+        <p>High of <strong className='temp-degrees'>{temperature.temp_max}</strong></p>
       </div>
     </>
   )
