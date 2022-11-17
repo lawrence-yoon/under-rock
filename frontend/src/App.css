@@ -1,7 +1,7 @@
 html {
   margin: 0;
   padding: 0;
-  background-color: rgb(70, 99, 155);
+  background-color: rgb(115, 136, 150);
   color: black;
   scroll-padding-top: 59px;
 }
@@ -125,7 +125,7 @@ body {
 }
 
 .articles-AP {
-  background-color: rgb(60, 126, 82);
+  background-color: rgb(105, 131, 81);
   border-style: solid;
   margin: 8px;
   padding: 4px 8px 0px;

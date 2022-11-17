@@ -6,6 +6,8 @@ import NewsAP from './components/NewsAP';
 import NewsYC from './components/NewsYC';
 import Navbar from './components/Navbar';
 
+//perhaps add a refresh button, so that it will return scrape time, and rerender new data
+
 function App() {
   const [data, setData] = useState(null)
   const [error, setError] = useState(null)

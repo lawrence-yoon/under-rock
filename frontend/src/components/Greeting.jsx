@@ -9,13 +9,13 @@ function Greeting() {
     if(0<=milTimeHours && milTimeHours<=5){
       return "Burning the Midnight Oil, Larry?"
     }
-    if(5<milTimeHours && milTimeHours<12){
+    if(6<=milTimeHours && milTimeHours<=12){
       return "Good Morning, Larry."
     }
-    if(12<milTimeHours && milTimeHours<17){
+    if(13<=milTimeHours && milTimeHours<=17){
       return "Good Afternoon, Larry."
     }
-    if(17<milTimeHours && milTimeHours<24){
+    if(18<=milTimeHours && milTimeHours<24){
       return "Good Evening, Larry."
     }
     return "error"
